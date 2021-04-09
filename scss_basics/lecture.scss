@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  //VARIABLES
+  $color-primary: #f9ed69; // yellow color
+  $color-secondary: #f08a5d; // orange
+  $color-tertiary: #b83b5e; // pin
+  $color-text-dark: #333;
+  $color-text-light: #eee;
+  $width-button: 150px;
+
+  //MIXINS
+  @mixin clearfix {
+    &::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+  }
+  
+  @mixin style-link-text($color) {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color;
+  }
+  
+    //FUNCTION
+  @function divide($a, $b) {
+    return $a / $b;
+  }
+  
+  
+  nav {
+    margin: divide(60/2) * 1px;
+    background-color: $color-primary;
+    @include clearfix;
+  }
+  
+  
+  
+  .navigation {
+    list-style: none;
+    float: left;
+    //NESTING
+    li {
+      display: inline-block;
+      margin-left: 30px;
+      
+      &:first-child {
+      margin: 0;
+      }
+      
+      a:link {
+        text-decoration: none;
+        text-transform: uppercase;
+        @include style-link-text($color-text-dark);
+      }
+      
+    }
+  }
+  
+  .buttons {
+    float: right;
+    
+  }
+
+  // PLACEHOLDER FOR EXTENDS
+  %btn-placeholder {
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100px;
+    width: $width-button;
+    //MIXINS
+    @include style-link-text($color-text-light);
+  }
+  
+  
+  .btn-main {
+    &:link {
+        //EXTENDS
+      @extend %btn-placehodler;
+      background-color: $color-secondary;
+    }
+    &:hover {
+      background-color: darken($color-secondary, 15%);
+    }
+  }
+  
+  .btn-hot {
+    &:link {
+        // EXTENDS
+      @extend %btn-placehodler;
+      background-color: $color-tertiary;
+    }
+    &:hover {
+      background-color: lighten($color-tertiary, 15%);
+    }
+  }
