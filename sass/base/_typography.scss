@@ -53,6 +53,18 @@ body {
     &:hover {
         text-shadow: .5rem 1rem 2rem rgba($color-black, 0.2);
     }
+
+    &--white {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 2px;
+
+        &:hover {
+            text-shadow: .5rem 1rem 2rem rgba($color-white, 0.2);
+        }
+    }
 }
 
 .heading-tertiary {
