@@ -3,8 +3,6 @@ body {
     font-weight: 400;
     /*font-size: 16px; */
     line-height: 1.7;
-    color: $color-grey-dark;
-    padding: 3rem;
 }
 
 
@@ -14,6 +12,7 @@ body {
     backface-visibility: hidden; /* part of behind the element becomes invisible. For shaky animations*/
     margin-bottom: 6rem;
 
+
     &--main {
         display: block;
         font-size: 6rem;
@@ -21,6 +20,12 @@ body {
         letter-spacing: 3.5rem;
         animation-name: moveInLeft;
         animation-duration: 2s;
+
+
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 4rem;
+        }
 
         /*
         animation-delay: 1s;
@@ -36,6 +41,10 @@ body {
         letter-spacing: 1.75rem;
         animation-name: moveInRight;
         animation-duration: 2s;
+
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
     }
 }
 
@@ -49,6 +58,14 @@ body {
     color: transparent;
     letter-spacing: 2px;
     transition: all .2s;
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
 
     &:hover {
         text-shadow: .5rem 1rem 2rem rgba($color-black, 0.2);
