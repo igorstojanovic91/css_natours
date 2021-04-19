@@ -30,6 +30,11 @@
             color: $color-grey-dark-2;
         }
 
+        @include respond(tab-port) {
+            width: 100%; 
+            margin-bottom: 2rem;;
+        }
+
     
     }
 
@@ -51,6 +56,11 @@
     &__radio-group {
         width: 45%;
         display: inline-block;
+
+        @include respond(tab-port) {
+            width: 100%; 
+            margin-bottom: 2rem;;
+        }
     }
 
     &__radio-input {
